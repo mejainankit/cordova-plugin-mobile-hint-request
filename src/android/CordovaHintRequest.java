@@ -62,14 +62,13 @@ public class CordovaHintRequest extends CordovaPlugin {
                     if (cred != null) {
                         final String unformattedPhone = cred.getId();
                         callback.success(unformattedPhone);
-                        System.out.println("<><>Phone Number " + unformattedPhone);
-                        client.stopAutoManage((FragmentActivity) activity);
-                        client.disconnect();
                     } else {
-                        callback.error("Unable to detect Phone Number");
+                        callback.error("Error: Unable to detect Phone Number");
                     }
                 }
             }
+            client.stopAutoManage((FragmentActivity) activity);
+            client.disconnect();
         }
     }
 
