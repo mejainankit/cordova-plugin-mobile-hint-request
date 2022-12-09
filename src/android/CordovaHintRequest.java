@@ -66,6 +66,9 @@ public class CordovaHintRequest extends CordovaPlugin {
                         callback.error("Error: Unable to detect Phone Number");
                     }
                 }
+            } else {
+                // User clicked outside to close the intent or clicked none of the above
+                callback.success(0);
             }
             client.stopAutoManage((FragmentActivity) activity);
             client.disconnect();
